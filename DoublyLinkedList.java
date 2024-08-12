@@ -1,4 +1,4 @@
-//package double_linkedList;
+package double_linkedList;
 import java.lang.Exception;
 
 /**
@@ -128,6 +128,50 @@ public class DoublyLinkedList<E> {
 				
 	}
 	
+	
+	/**
+	 * Permet de fusionner la liste chainée actuelle avec la liste dont le head est passé en params. </br>
+	 * 
+	 * @param list2Head Une référence vers le head de la liste à ajouter à la liste actuelle.
+	 */
+	public void append(Noeud<E> list2Head) {
+
+		//Cas ou la liste est vide
+		if(this.isEmpty()) {
+			this.head = list2Head;
+			Noeud<E> current = this.head;
+			//this.size++;
+			while(current != null) {
+				this.size++;
+								
+				if(current.getNext() == null)
+					this.tail = current;
+				
+				current = current.getNext();
+			}
+
+		}else {
+			
+			this.tail.setNext(list2Head);
+			list2Head.setPrevious(this.tail);
+			this.size = 0; 	//Réinitialiser la taille
+			
+			Noeud<E> current = this.head;
+			while(current != null) {
+				this.size++;
+								
+				if(current.getNext() == null)
+					this.tail = current;
+				
+				current = current.getNext();
+			}
+			
+		}
+				
+	}
+	
+	
+	
 	/**
 	 * Ajoute un élément dans la liste entre les noeuds predecesseur et successeur
 	 * en param. Ces deux noeuds doivent etre voisins avant l'appel
@@ -135,7 +179,7 @@ public class DoublyLinkedList<E> {
 	 * @param predecessor le noeud avant la location où on veut ajouter un noeud
 	 * @param successor   le noeud apres la location où on veut ajouter un noeud
 	 */
-	private void addBetween(E e, Noeud<E> predecessor, Noeud<E> successor) {
+	public void addBetween(E e, Noeud<E> predecessor, Noeud<E> successor) {
 		/**
 		 * Etapes générale : 
 		 * 		1. Créer le noeud à insérer
@@ -178,7 +222,7 @@ public class DoublyLinkedList<E> {
 				successor.setPrevious(to_insert);
 				
 				this.size ++;
-				
+				return;
 			}		
 			
 		}
@@ -193,7 +237,8 @@ public class DoublyLinkedList<E> {
 			
 			this.head = to_insert;
 			this.size++;
-					
+			
+			return;
 			
 		}
 		
@@ -208,6 +253,7 @@ public class DoublyLinkedList<E> {
 			this.tail = to_insert;
 			this.size++;
 			
+			return;
 		}
 		
 	}
@@ -248,7 +294,7 @@ public class DoublyLinkedList<E> {
 	 * 
 	 * @param node le noeud à supprimer 
 	 */
-	private E remove(Noeud<E> node) throws Exception {
+	public E remove(Noeud<E> node) throws Exception {
 		
 		//Vérifier que la le noeud existe
 		if(!this.contains(node))

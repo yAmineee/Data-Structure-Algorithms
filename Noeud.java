@@ -1,4 +1,4 @@
-//package double_linkedList;
+package double_linkedList;
 
 /**
  * Cette classe représente un noeud d'une liste doublemennt chainée.</br></br>
@@ -11,6 +11,11 @@
  * 
  * */
 public class Noeud<T> {
+
+	@Override
+	public String toString() {
+		return "Noeud [ " + element + " ]";
+	}
 
 	// Attributs
 	private T element; // Données stocké par le noeud
