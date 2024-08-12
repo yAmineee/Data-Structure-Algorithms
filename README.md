@@ -8,4 +8,7 @@ La langue utilisé est le français - Tous mes commentaires dans le code sont en
 ## Contenu
 **DoublyLinkedList.java** : Une liste doublement chainée classique (sans sentinelle).  
 **Noeud.java** : Un noeud ou maillon d'une liste doublement chainée.  
-**Deque_y** : Une "double-ended-queue" implémenté à l'aide de la liste doublement chainée mentionné plus haut. J'ai ajouté le "_y" au nom de la classe pour éviter toute confusion avec l'interface Deque du package java.util.  
+**Deque_y** : Une "double-ended-queue" implémenté à l'aide de la liste doublement chainée mentionné plus haut. J'ai ajouté le "_y" au nom de la classe pour éviter toute confusion avec l'interface Deque du package java.util.
+**ArbreBinaireC.java** : Un arbre binaire implémenté avec une liste doublement chainée. 
+**ArbreBinaireRechercheC.java** : Un arbre binaire de recherche implémenté avec une liste doublement chainée. Cette classe est incomplète. Il n'y a que l'insertion de noeud qui est implémenté
+**DicoAVL.java** : Une table (dictionnaire) implémenté avec un arbre AVL. Cette classe n'est qu'à 75% fonctionnelle. 
